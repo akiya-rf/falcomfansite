@@ -1,0 +1,115 @@
+@charset "UTF-8";
+body{
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+html{
+    background-image: url(back.webp);
+    background-repeat: repeat;
+    background-size: cover;
+}
+h1{
+    width: 224px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.slide img{
+    width: 900px;
+    height: 500px;
+    margin: 0;
+    padding: 0;
+    bottom: none;
+}
+
+.slide{
+    white-space: nowrap;
+    width: 900px;
+    height: 500px;
+    overflow: hidden;
+}
+
+.slide > :first-child{
+    animation-name: slide-4;
+    animation-duration: 12s;
+    animation-delay: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes slide-4{
+    0%{margin-left: 0;}
+    25%{margin-left: -100%;}
+    50%{margin-left: -200%;}
+    75%{margin-left: -300%;}
+    100%{margin-left: -400%;}
+}
+.center{
+    margin: auto;
+}
+h2{
+    width: 120px;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.gnavi{
+    display: flex;
+    margin-left:auto;
+    margin-right: auto;
+    list-style: none;
+}
+
+.gnavi li a{
+    display: block;
+   padding:10px 90px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+.gnavi li a{
+    /*線の基点とするためrelativeを指定*/
+  position: relative;
+}
+
+.gnavi li a:hover{
+  color:#0481A2;
+}
+
+.gnavi li a::after {
+    content: '';
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    /*線の形状*/
+    width: 80%;
+    height: 2px;
+    background:#0481A2;
+    /*アニメーションの指定*/
+    transition: all .3s;
+    transform: scale(0, 1);/*X方向0、Y方向1*/
+    transform-origin: center top;/*上部中央基点*/
+}
+
+/*現在地とhoverの設定*/
+.gnavi li a:hover::after {
+    transform: scale(1, 1);/*X方向にスケール拡大*/
+}
+
+table,tr,td{border: 1px solid;}
+table{border-collapse: collapse;}
+th{background: rgba(125, 111, 111, 0.7);}
+
+.box{
+    display: flex;
+    justify-content: space-around;
+}
+
+a:link{color:#00f;}
+a:valid{color: #aaa;}
+a:hover{color:#e00a44}
+a:active{
+    color: #0481A2;
+    background: #0480a21d;
+}
+a.pattern1{text-decoration-line: none;}
